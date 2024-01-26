@@ -7,7 +7,8 @@ import classes from './MainNavigation.module.css';
 const MainNavigation = () => {
   const authctx=useContext(AuthContext);
   const logoutHandler=()=>{
-    authctx.logout()
+    authctx.logout();
+    
   }
 
   const isLoggedIn=authctx.isLoggedIn;
@@ -35,7 +36,7 @@ const MainNavigation = () => {
           )}
         </ul>
       </nav>
-    </header>
+    </header> 
   );
 };
 

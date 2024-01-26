@@ -1,9 +1,11 @@
 import classes from './ProfileForm.module.css';
 import { useRef ,useContext} from 'react';
 import AuthContext from '../store/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileForm = () => {
   const authctx=useContext(AuthContext)
+  const Navigate=useNavigate();
 
   const newPasswordInputRef=useRef();
   const submitHandler=event=>{
@@ -24,6 +26,9 @@ const ProfileForm = () => {
         'Content-type':'application/json'
       }
     }).then(res=>{
+        // newPasswordInputRef.current.value = "";
+
+        Navigate('/')
       
     });
 
